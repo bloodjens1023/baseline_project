@@ -1,3 +1,5 @@
 <template>
-  <p>{{ $t('welcome') }}</p>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
