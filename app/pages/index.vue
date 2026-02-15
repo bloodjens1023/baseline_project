@@ -18,12 +18,16 @@
       <RoundedButton title="Misterioso" bg-image="https://downpg117.uqianbao.com/source/public/static/webp/D9Vf61xP.webp"/>
       <RoundedButton title="Check-in" bg-image="https://downpg117.uqianbao.com/source/public/static/webp/BzOmGKPn.webp"/>
       <RoundedButton title="Roleta" bg-image="https://downpg117.uqianbao.com/source/public/static/webp/CHoWiKXg.webp"/>
-    </div>
+  </div>
+
+  <AnimationsNum />
+  <NavigationButtons />
   <BottomSection />
   </div>
   
 </template>
 <script setup>
   import BottomSection from '../components/Home/BottomSection.vue';
-
+  import AnimationsNum from '../components/Home/AnimationsNum.vue';
+  import NavigationButtons from '../components/Home/NavigationButtons.vue';
 </script>
