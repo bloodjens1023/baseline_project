@@ -10,7 +10,10 @@
       <Rewards bg-image="https://downpg117.uqianbao.com/source/public/static/webp/DMpFmNoL.webp"/>
     </div>
   </div>
+
+  <BottomSection />
 </template>
 <script setup>
-  
+  import BottomSection from '../components/Home/BottomSection.vue';
+
 </script>
