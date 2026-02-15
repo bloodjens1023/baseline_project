@@ -28,7 +28,7 @@
                 <img
                   src="https://downpg117.uqianbao.com/source/public/static/svg/XVrMH9vx.svg"
                   alt="Close"
-                  class="w-6 h-6"
+                  class=""
                 />
               </button>
             </div>
