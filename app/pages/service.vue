@@ -67,9 +67,6 @@ const jumpOut = ref(0);
 const loading = ref(true);
 const error = ref("");
 
-function goBack() {
-  window.history.back();
-}
 
 interface ServiceConfig {
   jumpOut: number;
