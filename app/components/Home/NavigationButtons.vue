@@ -12,8 +12,8 @@
             :class="[
               'h-full tabs-item text-[13px] capitalize flex justify-center items-center gap-2 px-6 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 shadow-lg',
               tab.active 
-                ? 'font-bold bg-gradient-to-br from-[#bfea36] via-[#7dd93e] to-[#48bc49] active:from-emerald-700 active:via-green-700 active:to-teal-700 text-black border-2 border-emerald-400/50 hover:shadow-2xl hover:scale-[1.08] active:scale-95' 
-                : 'font-semibold bg-gradient-to-br from-[#1e2558] to-[#141935] text-gray-300 border border-blue-900/40 hover:from-[#252d6b] hover:to-[#1a2148] hover:text-white hover:border-blue-700/60 hover:scale-[1.08] active:scale-95 hover:shadow-blue-900/30'
+                ? 'font-bold  bg-gradient-to-b from-[#bfea36] to-[#48bc49] active:from-emerald-700 active:via-green-700 active:to-teal-700 text-black  ' 
+                : 'font-semibold bg-gradient-to-br from-[#1e2558] to-[#141935] text-gray-300 hover:from-[#252d6b] hover:to-[#1a2148] hover:text-white   '
             ]"
             @click="selectTab(index)"
           >
@@ -29,7 +29,7 @@
     <div class="search-game pl-3 w-[30%] z-[10]">
       <div class="h-full flex items-center">
         <button 
-          class="w-full h-full tabs-item text-[13px] font-semibold capitalize flex justify-center items-center gap-2 px-6 py-2 rounded-lg overflow-hidden cursor-pointer bg-gradient-to-br from-[#1e2558] to-[#141935] text-gray-300 border border-blue-900/40 hover:from-[#252d6b] hover:to-[#1a2148] hover:text-white hover:border-blue-700/60 hover:scale-[1.05] active:scale-95 transition-all duration-200 shadow-lg hover:shadow-blue-900/30"
+          class="w-full h-full tabs-item text-[13px] font-semibold capitalize flex justify-center items-center gap-2 px-6 py-2 rounded-lg overflow-hidden cursor-pointer bg-gradient-to-br from-[#1e2558] to-[#141935] text-gray-300 border border-blue-900/40 hover:from-[#252d6b] hover:to-[#1a2148] hover:text-white hover:border-blue-700/60 hover:scale-[1.05]  transition-all duration-200 shadow-lg hover:shadow-blue-900/30"
           @click="openSearch"
         >
           <!-- Search SVG Icon -->
