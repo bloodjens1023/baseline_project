@@ -6,7 +6,7 @@
     "
   >
     <div
-      class="bg-contain h-[68px] w-[95px] absolute z-[0] bottom-[-30px] right-[0px]"
+      class="bg-contain h-[68px] w-[95px] absolute z-[2] bottom-[-40px] right-[0px]"
       style="
         background-image: url(&quot;https://downpg117.uqianbao.com/source/public/static/webp/DnbsAF0P.webp&quot;);
       "
@@ -24,7 +24,17 @@
       </button>
       <img src="/asset/svg/logo.svg" alt="" srcset="" class="w-[120px]">
 
-      </div>
+      <div class="right tools-login flex-1 flex justify-end items-center pr-[6px] gap-[4px] flex-nowrap min-w-0">
+        <button class="!px-[10px] !py-[2px] mr-[4px]  whitespace-nowrap flex-shrink-0">
+          <span class="font-semibold">Entar</span>
+        </button>
+        <button class="bg-gradient-to-b from-[#bfea36] to-[#48bc49] rounded-xl text-black submit !ml-[2px] !px-[10px] !py-[4px] whitespace-nowrap relative flex items-center justify-center flex-shrink min-w-0">
+          <span class=" my-1/2 font-semibold">Cadastre-se</span>
+        </button>
+
+      </div>  
+    </div>
+      
       <div class="bg-contain w-full h-[4px] absolute z-[0] bottom-[-2px] bg-center" style="background-image: url(&quot;https://downpg117.uqianbao.com/source/public/static/webp/B_MtXw-3.webp&quot;);">
 
     </div>

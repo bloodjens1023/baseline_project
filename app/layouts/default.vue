@@ -5,6 +5,7 @@
     <!-- Header -->
     <TheHeader  v-if="route.path === '/'" />
 
+
     <!-- Main content prend tout l'espace disponible -->
     <main class="flex-1">
       <slot />

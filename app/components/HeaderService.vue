@@ -39,6 +39,7 @@
         <div class="w-10"></div>
       </div>
       <div class="bg-contain w-full h-[4px] absolute z-[0] bottom-[-2px] bg-center" style="background-image: url(&quot;https://downpg117.uqianbao.com/source/public/static/webp/B_MtXw-3.webp&quot;);"></div>
+      
     </div>
 </template>
 <script setup>
