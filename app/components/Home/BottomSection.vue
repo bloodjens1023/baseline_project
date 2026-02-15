@@ -1,5 +1,51 @@
 <template>
   <div>
+    <div
+      class="w-full flex flex-row justify-between items-center gap-[8px] px-6 mt-4"
+    >
+      <img
+        src="https://downpg117.uqianbao.com/source/public/static/webp/CbkHlecm.webp"
+        alt=""
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="h-[30px] aspect-[4.45/1]"
+      />
+      <img
+        src="https://downpg117.uqianbao.com/source/public/static/webp/DcWbmleq.webp"
+        alt=""
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="h-[30px] aspect-[3.5/1]"
+      />
+      <img
+        src="https://downpg117.uqianbao.com/source/public/static/webp/C-S8qa3_.webp"
+        alt=""
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="h-[30px] aspect-[3.04/1]"
+      />
+    </div>
+
+    <!-- Desc -->
+    <div class="Contact w-full flex flex-col text-[12px] px-8 mt-4 font-bold">
+      <div class="company-introduction leading-[16px] break-all">
+        giro77.bet é uma marca administrada por GAMEWIZ BRASIL LTDA CNP.Ino 56
+        195 099/0001-89, devidamente autorizada pelo Ministério da Fazenda sob a
+        Autorização SPA/MF n° 2.104-10.
+      </div>
+      <div class="company-introduction leading-[16px] mt-[10px]">
+        1. Este produto é para uso de usuários maiores de 18 anos e é destinado
+        apenas para fins de entretenimento.<br />
+        2. Este giro77.bet contém compras no app.<br />
+        3. O fato de um jogador jogar ou ganhar em um giro77.bet de apostas
+        sociais não significa que ele ganhará em apostas com dinheiro real e
+        jogos relacionados no futuro.
+      </div>
+    </div>
+
     <!-- Les 9 Icons  -->
     <div class="px-8 pt-8">
       <div class="flex justify-center items-center gap-2 mb-2">
