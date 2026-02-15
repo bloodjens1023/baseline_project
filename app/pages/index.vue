@@ -4,3 +4,6 @@
     <p>Ceci est la page d'accueil</p>
   </div>
 </template>
+<script setup>
+  
+</script>
