@@ -1,51 +1,78 @@
 <template>
-  <div class="w-full flex flex-row justify-start items-center gap-[2px]">
-    <div class="w-[70%] flex flex-row items-center h-[44px] home-tabs box-content z-40 pb-[6px] pt-[5px]">
-      <div class="h-full flex w-full flex-row items-center home-tabs-scroll overflow-y-hidden gap-[8px] px-2">
-        <!-- Loop through tabs -->
-        <div 
-          v-for="(tab, index) in tabs" 
-          :key="index" 
-          class="h-full home-tabs-scroll-list"
-        >
+  <div>
+    <!-- Navigation Tabs -->
+    <div class="w-full flex flex-row justify-start items-center gap-[2px] sticky top-0 z-50 py-2">
+      <div class="w-[70%] flex flex-row items-center h-[44px] home-tabs box-content z-40 pb-[6px] pt-[5px]">
+        <div class="h-full flex w-full flex-row items-center home-tabs-scroll overflow-y-hidden gap-[8px] px-2">
+          <!-- Loop through tabs -->
           <div 
-            :class="[
-              'h-full tabs-item text-[13px] capitalize flex justify-center items-center gap-2 px-6 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 shadow-lg',
-              tab.active 
-                ? 'font-bold  bg-gradient-to-b from-[#bfea36] to-[#48bc49] active:from-emerald-700 active:via-green-700 active:to-teal-700 text-black  ' 
-                : 'font-semibold bg-gradient-to-br from-[#1e2558] to-[#141935] text-gray-300 hover:from-[#252d6b] hover:to-[#1a2148] hover:text-white   '
-            ]"
-            @click="selectTab(index)"
+            v-for="(tab, index) in tabs" 
+            :key="index" 
+            class="h-full home-tabs-scroll-list"
           >
-            <!-- SVG Icon -->
-            <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor" v-html="tab.icon"></svg>
-            <span>{{ tab.name }}</span>
+            <div 
+              :class="[
+                'h-full tabs-item text-[13px] capitalize flex justify-center items-center gap-2 px-6 rounded-lg overflow-hidden cursor-pointer transition-all duration-200',
+                tab.active 
+                  ? 'font-bold bg-gradient-to-b from-[#bfea36] to-[#48bc49] text-black border-2 border-emerald-400/50' 
+                  : 'font-semibold bg-gradient-to-br from-[#1e2558] to-[#141935] text-gray-300 border border-blue-900/40 hover:from-[#252d6b] hover:to-[#1a2148] hover:text-white hover:border-blue-700/60'
+              ]"
+              @click="scrollToSection(index)"
+            >
+              <!-- SVG Icon -->
+              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor" v-html="tab.icon"></svg>
+              <span>{{ tab.name }}</span>
+            </div>
           </div>
         </div>
       </div>
+      
+      <!-- Search Button -->
+      <div class="search-game pl-3 w-[30%] z-[10]">
+        <div class="h-full flex items-center">
+          <button 
+            class="w-full h-full tabs-item text-[13px] font-semibold capitalize flex justify-center items-center gap-2 px-6 py-2 rounded-lg overflow-hidden cursor-pointer bg-gradient-to-br from-[#1e2558] to-[#141935] text-gray-300 border border-blue-900/40 hover:from-[#252d6b] hover:to-[#1a2148] hover:text-white hover:border-blue-700/60 transition-all duration-200"
+            @click="openSearch"
+          >
+            <!-- Search SVG Icon -->
+            <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <span>Buscar</span>
+          </button>
+        </div>
+      </div>
     </div>
-    
-    <!-- Search Button -->
-    <div class="search-game pl-3 w-[30%] z-[10]">
-      <div class="h-full flex items-center">
-        <button 
-          class="w-full h-full tabs-item text-[13px] font-semibold capitalize flex justify-center items-center gap-2 px-6 py-2 rounded-lg overflow-hidden cursor-pointer bg-gradient-to-br from-[#1e2558] to-[#141935] text-gray-300 border border-blue-900/40 hover:from-[#252d6b] hover:to-[#1a2148] hover:text-white hover:border-blue-700/60 hover:scale-[1.05]  transition-all duration-200 shadow-lg hover:shadow-blue-900/30"
-          @click="openSearch"
-        >
-          <!-- Search SVG Icon -->
-          <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-          <span>Buscar</span>
-        </button>
+
+    <!-- Sections Content -->
+    <div class="sections-container">
+      <div 
+        v-for="(tab, index) in tabs" 
+        :key="`section-${index}`"
+        :ref="el => sectionRefs[index] = el"
+        :id="`section-${tab.name.toLowerCase()}`"
+        class="section py-8"
+      >
+        <div class="text-center">
+          <!-- Section Icon -->
+          <svg class="w-[60px] h-[60px] mx-auto mb-4 text-[#7dd93e]" viewBox="0 0 24 24" fill="currentColor" v-html="tab.icon"></svg>
+          
+          <!-- Section Title -->
+          <h2 class="text-3xl font-bold text-white mb-2">{{ tab.name }}</h2>
+          
+          <!-- Section Description -->
+          <p class="text-base text-gray-400">
+            Catégorie {{ tab.name }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 // Tabs data
 const tabs = ref([
@@ -96,18 +123,69 @@ const tabs = ref([
   }
 ])
 
-// Select tab function
-const selectTab = (index) => {
+// Section refs
+const sectionRefs = ref([])
+
+// Scroll to section function
+const scrollToSection = (index) => {
+  // Update active tab
   tabs.value.forEach((tab, i) => {
     tab.active = i === index
   })
+  
+  // Smooth scroll to section
+  const section = sectionRefs.value[index]
+  if (section) {
+    const navHeight = 80
+    const targetPosition = section.offsetTop - navHeight
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    })
+  }
 }
 
 // Open search function
 const openSearch = () => {
   console.log('Search opened')
-  // Add your search logic here
 }
+
+// Observer pour détecter quelle section est visible
+let observer = null
+
+onMounted(() => {
+  const options = {
+    root: null,
+    rootMargin: '-100px 0px -60% 0px',
+    threshold: 0
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const index = sectionRefs.value.findIndex(ref => ref === entry.target)
+        if (index !== -1) {
+          tabs.value.forEach((tab, i) => {
+            tab.active = i === index
+          })
+        }
+      }
+    })
+  }, options)
+
+  sectionRefs.value.forEach((section) => {
+    if (section) {
+      observer.observe(section)
+    }
+  })
+})
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+  }
+})
 </script>
 
 <style scoped>
