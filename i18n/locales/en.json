@@ -3,5 +3,10 @@
   "service_title": "Service",
   "service_description": "After receiving your comments, our customer service team will respond as quickly as possible during working hours. Please be patient. Thank you!",
   "enter":"To enter",
-  "register": "register"
+  "register": "register",
+  "promotion":"Promotion",
+  "deposit":"Deposit",
+  "ranking":"Ranking",
+  "loot":"loot",
+  "personal":"Personal"
 }

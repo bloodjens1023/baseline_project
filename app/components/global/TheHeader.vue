@@ -31,12 +31,12 @@
         <button
           class="!px-[10px] !py-[2px] mr-[4px] whitespace-nowrap flex-shrink-0"
         >
-          <span class="font-semibold">Entar</span>
+          <span class="font-semibold">   {{t('enter')}}</span>
         </button>
         <button
           class="bg-gradient-to-b from-[#bfea36] to-[#48bc49] rounded-xl text-black submit !ml-[2px] !px-[10px] !py-[4px] whitespace-nowrap relative flex items-center justify-center flex-shrink min-w-0"
         >
-          <span class="my-1/2 font-semibold">Cadastre-se</span>
+          <span class="my-1/2 font-semibold"> {{t('register')}}</span>
         </button>
       </div>
     </div>
@@ -55,7 +55,7 @@
 <script setup>
 import { ref } from 'vue'
 import TheMenuAside from '../MenuAside.vue'
-
+const { t } = useI18n()
 const menuOpen = ref(false)
 
 const toggleMenu = () => {

@@ -9,13 +9,13 @@
         <!-- Colonne 1: Depósito -->
         <button class="flex flex-col items-center justify-center p-2">
             <img src="https://downpg117.uqianbao.com/source/public/static/svg/sIofWxJ8.svg" alt="" class="h-[22px] mb-1">
-            <span class="text-[11px] capitalize text-center  font-bold text-[#698ed4]">Depósito</span>
+            <span class="text-[11px] capitalize text-center  font-bold text-[#698ed4]">{{ t('promotion') }} </span>
         </button>
         
         <!-- Colonne 2: Promoções -->
         <button class="flex flex-col items-center justify-center p-2">
             <img src="https://downpg117.uqianbao.com/source/public/static/svg/D4seqzx_.svg" alt="" class="h-[22px] logo h-[28px]">
-            <span class="text-[11px] capitalize text-center  font-bold text-[#698ed4]">Promoções</span>
+            <span class="text-[11px] capitalize text-center  font-bold text-[#698ed4]">{{t('deposit')}}</span>
         </button>
         
         <!-- Colonne 3: Ranking (centrée) -->
@@ -26,7 +26,7 @@
                      class="w-[80px] scale-[1.9] aspect-[1.32/1] absolute top-[-25px] left-[46%] transform -translate-x-1/2 z-[1] 
                             transition-all duration-300 ease-in-out  hover:drop-shadow-[0_0_15px_rgba(255,215,0,0.8)]">
                 <span class="text-[11px] text-[#698ed4] capitalize text-center tracking-wider mt-[20px] font-bold">
-                    Ranking
+                    {{t('ranking')}}
                 </span>
             </div>
         </button>
@@ -34,15 +34,19 @@
         <!-- Colonne 4: Saque -->
         <button class="flex flex-col items-center justify-center p-2">
             <img src="https://downpg117.uqianbao.com/source/public/static/svg/DntYU2eA.svg" alt="" class="h-[22px] h-[24px]">
-            <span class="text-[11px] capitalize text-center  font-bold text-[#698ed4]">Saque</span>
+            <span class="text-[11px] capitalize text-center  font-bold text-[#698ed4]">{{ t('loot') }}</span>
         </button>
         
         <!-- Colonne 5: Pessoal -->
         <button class="flex flex-col items-center justify-center p-2">
             <img src="https://downpg117.uqianbao.com/source/public/static/svg/ChRMZLyf.svg" alt="" class="h-[22px] h-[28px]">
-            <span class="text-[11px] capitalize text-center  font-bold text-[#698ed4]">Pessoal</span>
+            <span class="text-[11px] capitalize text-center  font-bold text-[#698ed4]">{{ t('personal') }}</span>
         </button>
         
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+const { t } = useI18n()
+</script>

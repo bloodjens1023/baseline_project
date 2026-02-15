@@ -1,6 +1,12 @@
 {
   "welcome": "Bem-vindo",
   "service_title": "Serviço",
-  "service_description": "Depois de receber seus comentários, nossa equipe de atendimento ao cliente responderá o mais rápido possivel durante o horário de trabalho, seja paciente, obrigado!"
-  
+  "service_description": "Depois de receber seus comentários, nossa equipe de atendimento ao cliente responderá o mais rápido possivel durante o horário de trabalho, seja paciente, obrigado!",
+  "deposit":"Depósito",
+  "promotion":"Promoções",
+  "enter":"Entrar",
+  "register": "Cadastre-se",
+  "ranking":"Ranking",
+  "loot":"Saque",
+  "personal":"Pessoal"
 }
