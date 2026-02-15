@@ -5,7 +5,7 @@
     style="background-image: url(&quot;https://downpg117.uqianbao.com/source/public/static/webp/2t18UHtq.webp&quot;);"
   >
     <div class="flex flex-col gap-[4px]">
-        <img :src="bgImage"  alt="" class="h-[50px] w-[50px]">
+        <img :src="bgImage"  alt="" class="h-[50px] w-[50px] mt-[8px]">
       </div>
       <div class="mt-4 text-[12px]"><p>{{ title }}</p></div>
   </div>

@@ -1,9 +1,8 @@
 <template>
   <div
-    class="sticky top-0 left-0 right-0  w-[500px] bg-gradient-to-b from-[#162d77] to-[#1f4789] backdrop-blur-sm text-white shadow-xl border-b border-blue-800/30 bg-cover overscroll-none "
+    class="fixed  w-[500px] bg-gradient-to-b from-[#162d77] to-[#1f4789] backdrop-blur-sm text-white shadow-xl border-b border-blue-800/30 bg-cover overscroll-none  z-[55]"
     style="
       background-image: url(&quot;https://downpg117.uqianbao.com/source/public/static/webp/OMR6_kmW.webp&quot;);
-      z-index: 9999 !important;
     "
   >
     <div

@@ -3,8 +3,7 @@
     <div
       class="text-center w-full flex justify-center items-center text-[12px] font-bold px-10 pt-20"
     >
-      Bem-vindo(a) à comunidade giro77.bet! Aqui compartilhamos ideias,
-      discutimos temas interessantes e interagimos com respeito. Participe! 😊
+      {{ t('hello') }}
     </div>
 
     <div
@@ -21,12 +20,12 @@
           decoding="async"
           class="h-7 w-7"
         />
-        <span class="text-white text-xs font-bold">Telegram Channel</span>
+        <span class="text-white text-xs font-bold">Telegrama</span>
       </div>
     </div>
 
     <p class="text-center text-[12px] font-bold mt-6">
-      Contact us: support@giro77.bet
+      {{ t('contact') }} support@giro77.bet
     </p>
 
     <!-- list icons -->
@@ -92,49 +91,49 @@
             type="button"
             class="text-sm font-bold text-white"
           >
-            How To Play
+            {{ t("howToPlay") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
             class="text-sm font-bold text-white"
           >
-            Terms & Conditions
+            {{ t("termsConditions") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
             class="text-sm font-bold text-white"
           >
-            AML Policy
+            {{ t("amlPolicy") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
             class="text-sm font-bold text-white"
           >
-            KYC Policy
+            {{ t("kycPolicy") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
             class="text-sm font-bold text-white"
           >
-            Self Exclusion Policy
+            {{ t("selfExclusionPolicy") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
             class="text-sm font-bold text-white"
           >
-            Responsible Gaming Policy
+            {{ t("responsibleGamingPolicy") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
             class="text-sm font-bold text-white"
           >
-            Underage Gaming Policy (18+ to play clause)
+            {{ t("underageGamingPolicy") }}
           </button>
         </div>
       </div>
@@ -173,17 +172,13 @@
     <!-- Desc -->
     <div class="Contact w-full flex flex-col text-[12px] px-8 mt-6 font-bold">
       <div class="company-introduction leading-[16px] break-all">
-        giro77.bet é uma marca administrada por GAMEWIZ BRASIL LTDA CNP.Ino 56
-        195 099/0001-89, devidamente autorizada pelo Ministério da Fazenda sob a
-        Autorização SPA/MF n° 2.104-10.
+        {{ t('legalNotice') }}
       </div>
       <div class="company-introduction leading-[16px] mt-[10px]">
-        1. Este produto é para uso de usuários maiores de 18 anos e é destinado
-        apenas para fins de entretenimento.<br />
-        2. Este giro77.bet contém compras no app.<br />
-        3. O fato de um jogador jogar ou ganhar em um giro77.bet de apostas
-        sociais não significa que ele ganhará em apostas com dinheiro real e
-        jogos relacionados no futuro.
+        <p> {{ t('disclaimer1') }}</p>
+        <p> {{ t('disclaimer2') }}</p>
+        <p> {{ t('disclaimer3') }}</p>
+      
       </div>
     </div>
 
@@ -266,14 +261,14 @@
     <div
       class="text-center w-full flex flex-col justify-center items-center text-[12px] gap-1 mt-10 font-bold"
     >
-      <span>Copyright © 2015 – 2025 giro77.bet. All rights reserved.</span>
+      <span>{{ t('copyright') }}</span>
       <div class="w-full flex justify-center items-center">
         updateTime: 2025-12-03 08:30:53
       </div>
     </div>
 
     <!-- Back to Top Button -->
-    <div class="w-full flex justify-center mt-16 mb-10 cursor-pointer">
+    <div class="w-full flex justify-center mt-16 mb-[200px] cursor-pointer" @click="scrollToTop">
       <div class="el-backtop" style="right: 40px; bottom: 40px">
         <div
           class="flex flex-col justify-center items-center text-center text-white h-full"
@@ -288,3 +283,13 @@
     </div>
   </div>
 </template>
+<script setup>
+const { t } = useI18n()
+// Fonction scroll to top
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+</script>

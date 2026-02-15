@@ -1,5 +1,8 @@
 <template>
-  <footer class="bg-contain text-white shadow-xl border-t border-blue-800/30 relative overscroll-none" style="background-image: url(https://downpg117.uqianbao.com/source/public/static/webp/B6QWs8Dc.webp);">
+  <footer class="fixed bottom-0 left-1/2 -translate-x-1/2
+         w-full max-w-[500px]
+         bg-contain text-white shadow-xl
+         border-t border-blue-800/30 z-[55]" style="background-image: url(https://downpg117.uqianbao.com/source/public/static/webp/B6QWs8Dc.webp);">
     <div class="bg-contain w-[500px] h-[4px] absolute z-[0] bottom-[64px] bg-center" style="background-image: url(&quot;https://downpg117.uqianbao.com/source/public/static/webp/B_MtXw-3.webp&quot;);">
     </div>
 
