@@ -28,7 +28,7 @@
           :bg-image="`${config.public.assetsURL}/${btn.image}`"
         />
       </div>
-
+      <AnimationsNum/>
       <!-- Game Section -->
       <GameSection />
 

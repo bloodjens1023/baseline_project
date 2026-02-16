@@ -15,8 +15,7 @@
 
     <!-- HEADER CONTENT -->
     <div class="px-3 py-3 flex items-center w-full">
-      
-      <!-- MENU BUTTON -->
+            <!-- MENU BUTTON -->
       <button
         @click="toggleMenu"
         class="mr-3 p-2 bg-blue-800/50 rounded-xl transition-all duration-200"
@@ -62,8 +61,19 @@
       style="background-image: url('https://downpg117.uqianbao.com/source/public/static/webp/B_MtXw-3.webp');"
     ></div>
   </div>
+  <transition
+  enter-active-class="transition transform duration-300 ease-out"
+  leave-active-class="transition transform duration-300 ease-in"
+  enter-from-class="opacity-0 -translate-x-full"
+  enter-to-class="opacity-100 translate-x-0"
+  leave-from-class="opacity-100 translate-x-0"
+  leave-to-class="opacity-0 -translate-x-full"
+>
+  <div v-if="menuOpen" class="fixed top-0 left-0 w-64 h-full z-50">
+    <TheMenuAside :is-open="menuOpen" @close="closeMenu" />
+  </div>
+</transition>
 
-  <TheMenuAside :is-open="menuOpen" @close="closeMenu" />
 </template>
 
 
