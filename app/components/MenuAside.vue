@@ -4,7 +4,6 @@
       <div v-if="isOpen" class="fixed inset-0 z-[9999]" @click="handleClose">
         <div class="absolute inset-0 bg-black/50"></div>
 
-        <!-- Container centré avec max-width comme le layout -->
         <div class="max-w-[500px] mx-auto h-full relative">
           <aside
             @click.stop
@@ -12,17 +11,17 @@
           >
             <!-- Header fixe -->
             <div
-              class="sticky top-0 z-10 w-full bg-gradient-to-b from-[#162d77] to-[#1f4789] backdrop-blur-sm text-white shadow-xl border-b border-blue-800/30 px-4 py-4 flex items-center justify-between"
-              style="
-                background-image:
-                  url(&quot;https://downpg117.uqianbao.com/source/public/static/webp/OMR6_kmW.webp&quot;),
-                  url(&quot;https://downpg117.uqianbao.com/source/public/static/webp/OMR6_kmW.webp&quot;);
-                background-position:
-                  left top,
-                  right top;
-                background-repeat: no-repeat, no-repeat;
-                background-size: cover;
-              "
+              class="sticky top-0 z-10 w-full 
+                     bg-gradient-to-b from-[#162d77] to-[#1f4789] 
+                     backdrop-blur-sm text-white shadow-xl 
+                     border-b border-blue-800/30 
+                     px-4 py-4 flex items-center justify-between"
+              :style="{
+                backgroundImage: bg('/static/webp/OMR6_kmW.webp'),
+                backgroundPosition: 'left top',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover'
+              }"
             >
               <img src="/asset/svg/logo.svg" alt="" class="w-[120px]" />
 
@@ -32,11 +31,12 @@
                 aria-label="Fermer"
               >
                 <img
-                  src="https://downpg117.uqianbao.com/source/public/static/svg/XVrMH9vx.svg"
+                  :src="asset('/static/svg/XVrMH9vx.svg')"
                   alt="Close"
                 />
               </button>
             </div>
+
             <menu-aside-content />
           </aside>
         </div>
@@ -45,8 +45,17 @@
   </teleport>
 </template>
 
-<script setup>
+
+
+<script setup lang="ts">
 import MenuAsideContent from './MenuAsideContent.vue';
+const config = useRuntimeConfig()
+
+const asset = (path: string) =>
+  `${config.public.assetsURL}${path}`
+
+const bg = (path: string) =>
+  `url(${config.public.assetsURL}${path})`
 
 defineProps({
   isOpen: {

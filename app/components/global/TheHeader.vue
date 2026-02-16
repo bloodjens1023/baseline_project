@@ -5,24 +5,26 @@
            backdrop-blur-sm text-white shadow-xl 
            border-b border-blue-800/30 
            bg-cover overscroll-none z-[90]"
-    style="background-image: url('https://downpg117.uqianbao.com/source/public/static/webp/OMR6_kmW.webp');"
+    :style="{ backgroundImage: bg('/static/webp/OMR6_kmW.webp') }"
   >
+
     <!-- Decoration image -->
     <div
       class="bg-contain bg-no-repeat h-[68px] w-[95px] absolute z-[2] bottom-[-40px] right-0"
-      style="background-image: url('https://downpg117.uqianbao.com/source/public/static/webp/DnbsAF0P.webp');"
+      :style="{ backgroundImage: bg('/static/webp/DnbsAF0P.webp') }"
     ></div>
 
     <!-- HEADER CONTENT -->
     <div class="px-3 py-3 flex items-center w-full">
-            <!-- MENU BUTTON -->
+
+      <!-- MENU BUTTON -->
       <button
         @click="toggleMenu"
         class="mr-3 p-2 bg-blue-800/50 rounded-xl transition-all duration-200"
         aria-label="Back"
       >
         <img
-          src="https://downpg117.uqianbao.com/source/public/static/png/Csdczrui.png"
+          :src="asset('/static/png/Csdczrui.png')"
           alt="menu"
           class="w-5 h-5 object-contain"
         />
@@ -38,9 +40,7 @@
       <!-- RIGHT SIDE -->
       <div class="flex-1 flex justify-end items-center gap-2 min-w-0">
         
-        <button
-          class="px-3 py-1 text-sm font-semibold whitespace-nowrap"
-        >
+        <button class="px-3 py-1 text-sm font-semibold whitespace-nowrap">
           {{ t('enter') }}
         </button>
 
@@ -58,32 +58,29 @@
     <!-- Bottom line decoration -->
     <div
       class="bg-contain bg-no-repeat w-full h-[4px] absolute bottom-[-2px] bg-center"
-      style="background-image: url('https://downpg117.uqianbao.com/source/public/static/webp/B_MtXw-3.webp');"
+      :style="{ backgroundImage: bg('/static/webp/B_MtXw-3.webp') }"
     ></div>
-  </div>
-  <transition
-  enter-active-class="transition transform duration-300 ease-out"
-  leave-active-class="transition transform duration-300 ease-in"
-  enter-from-class="opacity-0 -translate-x-full"
-  enter-to-class="opacity-100 translate-x-0"
-  leave-from-class="opacity-100 translate-x-0"
-  leave-to-class="opacity-0 -translate-x-full"
->
-  <div v-if="menuOpen" class="fixed top-0 left-0 w-64 h-full z-50">
-    <TheMenuAside :is-open="menuOpen" @close="closeMenu" />
-  </div>
-</transition>
 
+  </div>
+
+  <TheMenuAside :is-open="menuOpen" @close="closeMenu" />
 </template>
 
-
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import TheMenuAside from '../MenuAside.vue'
-const { t } = useI18n()
-const menuOpen = ref(false)
 
-const toggleMenu = () => {
+const menuOpen = ref(false)
+const { t } = useI18n()
+const config = useRuntimeConfig()
+
+const asset = (path: string) =>
+  `${config.public.assetsURL}${path}`
+
+const bg = (path: string) =>
+  `url(${config.public.assetsURL}${path})`
+
+  const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
 }
 
@@ -91,3 +88,7 @@ const closeMenu = () => {
   menuOpen.value = false
 }
 </script>
+
+
+
+
