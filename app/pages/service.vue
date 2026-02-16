@@ -1,7 +1,6 @@
 <template>
   <div
-    class="max-w-[500px] mx-auto min-h-screen"
-    :style="{backgroundColor: 'var(--background)'}"
+    class="max-w-[500px] mx-auto min-h-screen bg-[#061237]"
   >
     <HeaderService/>
     <div class="max-w-2xl mx-auto px-2 py-8">

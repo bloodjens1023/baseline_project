@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full scroll-smooth mt-16" :style="{backgroundColor: 'var(--background)'}" >
+  <div class="w-full scroll-smooth mt-16 bg-[#061237]" >
 
     <!-- Banner -->
     <img
@@ -20,7 +20,7 @@
     <div class="relative">
 
       <!-- Sticky Buttons -->
-      <div class="sticky top-12 z-[88]  py-3 flex items-center justify-center gap-2 px-2" :style="{backgroundColor: 'var(--background)'}">
+      <div class="sticky top-12 z-[88]  py-3 flex items-center justify-center gap-2 px-2 bg-[#061237]">
         <RoundedButton
           v-for="(btn, index) in buttons"
           :key="index"
