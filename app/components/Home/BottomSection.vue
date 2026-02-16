@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="{backgroundColor: 'var(--background)'}">
     <div
       class="text-center w-full flex justify-center items-center text-[12px] font-bold px-10 pt-20"
     >
@@ -268,7 +268,7 @@
     </div>
 
     <!-- Back to Top Button -->
-    <div class="w-full flex justify-center mt-16 mb-[200px] cursor-pointer" @click="scrollToTop">
+    <div class="w-full flex justify-center items-start mt-16 h-[300px] cursor-pointer" @click="scrollToTop" >
       <div class="el-backtop" style="right: 40px; bottom: 40px">
         <div
           class="flex flex-col justify-center items-center text-center text-white h-full"

@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       protocolName: 'pg117',
       theme: '#182877',
 
-      activeTheme: 'default',
+      activeTheme: 'dark',
 
       themes: {
         default: {

@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen text-white">
 
-    <!-- Container centré max 500px -->
-    <div class="w-full max-w-[500px] bg-[#061237] mx-auto flex flex-col min-h-screen">
+    <!-- default style bg-[#061237]  -->
+    <div class="w-full max-w-[500px] mx-auto flex flex-col min-h-screen"   :style="{backgroundColor: 'var(--background)'}">
 
       <!-- Header -->
       <TheHeader 
