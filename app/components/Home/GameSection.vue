@@ -73,7 +73,7 @@ onMounted(async () => {
         :id="`platform-${platform}`"
         class="mb-8 mt-5"
       >
-        <h2 class="text-xl font-bold text-white mb-3 px-2">
+        <h2 class="text-xl font-bold  mb-3 px-2" :style="{ color: 'var(--text)' }">
           {{ platform }}
         </h2>
 

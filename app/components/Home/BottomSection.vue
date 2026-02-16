@@ -2,6 +2,7 @@
   <div :style="{backgroundColor: 'var(--background)'}">
     <div
       class="text-center w-full flex justify-center items-center text-[12px] font-bold px-10 pt-20"
+      
     >
       {{ t('hello') }}
     </div>
@@ -89,49 +90,49 @@
           <button
             aria-disabled="false"
             type="button"
-            class="text-sm font-bold text-white"
+            class="text-sm font-bold text-white" :style="{ color: 'var(--text)' }"
           >
             {{ t("howToPlay") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
-            class="text-sm font-bold text-white"
+            class="text-sm font-bold text-white" :style="{ color: 'var(--text)' }"
           >
             {{ t("termsConditions") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
-            class="text-sm font-bold text-white"
+            class="text-sm font-bold text-white" :style="{ color: 'var(--text)' }"
           >
             {{ t("amlPolicy") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
-            class="text-sm font-bold text-white"
+            class="text-sm font-bold text-white" :style="{ color: 'var(--text)' }"
           >
             {{ t("kycPolicy") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
-            class="text-sm font-bold text-white"
+            class="text-sm font-bold " :style="{ color: 'var(--text)' }"
           >
             {{ t("selfExclusionPolicy") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
-            class="text-sm font-bold text-white"
+            class="text-sm font-bold " :style="{ color: 'var(--text)' }"
           >
             {{ t("responsibleGamingPolicy") }}
           </button>
           <button
             aria-disabled="false"
             type="button"
-            class="text-sm font-bold text-white"
+            class="text-sm font-bold " :style="{ color: 'var(--text)' }"
           >
             {{ t("underageGamingPolicy") }}
           </button>
@@ -141,7 +142,7 @@
 
     <!-- Title image -->
     <div
-      class="w-full flex flex-row justify-between items-center gap-[8px] px-6 mt-14"
+      class="w-full flex flex-row justify-between items-center gap-[8px] px-6 mt-14" 
     >
       <img
         src="https://downpg117.uqianbao.com/source/public/static/webp/CbkHlecm.webp"
@@ -150,6 +151,7 @@
         fetchpriority="high"
         decoding="async"
         class="h-[30px] aspect-[4.45/1]"
+        
       />
       <img
         src="https://downpg117.uqianbao.com/source/public/static/webp/DcWbmleq.webp"
@@ -158,6 +160,7 @@
         fetchpriority="high"
         decoding="async"
         class="h-[30px] aspect-[3.5/1]"
+        
       />
       <img
         src="https://downpg117.uqianbao.com/source/public/static/webp/C-S8qa3_.webp"

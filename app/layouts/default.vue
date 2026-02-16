@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen text-white">
+  <div class="min-h-screen "  :style="{ color: 'var(--text)' }">
 
     <!-- default style bg-[#061237]  -->
     <div class="w-full max-w-[500px] mx-auto flex flex-col min-h-screen"   :style="{backgroundColor: 'var(--background)'}">
