@@ -64,20 +64,43 @@
         class="w-full flex justify-between items-center py-[0.4rem] px-3 bg-[#15194c] rounded-lg border border-blue-900/30"
       >
         <!-- Left item -->
-        <div class="flex items-center gap-3">
-          <div class="p-1.5">
-            <img
-              :src="item.icon"
-              :alt="item.title"
-              class="w-6 h-6"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
-          <span class="text-sm font-bold text-blue-400">
-            {{ item.title }}
-          </span>
-        </div>
+          <NuxtLink to="/service" v-if="item.title === 'Suporte ao vivo'">
+            <div class="flex items-center gap-3">
+            
+              <div class="p-1.5">
+                <img
+                  :src="item.icon"
+                  :alt="item.title"
+                  class="w-6 h-6"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <span class="text-sm font-bold text-blue-400">
+                {{ item.title }}
+              </span>
+              </div>
+          </NuxtLink>
+          <NuxtLink to="/service" v-if="item.title !== 'Suporte ao vivo'">
+            <div class="flex items-center gap-3">
+            
+              <div class="p-1.5">
+                <img
+                  :src="item.icon"
+                  :alt="item.title"
+                  class="w-6 h-6"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <span class="text-sm font-bold text-blue-400">
+                {{ item.title }}
+              </span>
+              </div>
+          </NuxtLink>
+         
+          
+       
 
         <!-- Right SVG -->
         <svg
