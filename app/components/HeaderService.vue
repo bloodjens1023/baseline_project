@@ -1,12 +1,13 @@
 <template>
   <div
     class="bg-gradient-to-b from-[#162d77] to-[#1f4789] backdrop-blur-sm text-white shadow-xl border-b border-blue-800/30 bg-cover"
-    :style="`background-image: url(${config.public.assetsURL}/static/webp/OMR6_kmW.webp);`"
+    :style="{backgroundImage: bg('/static/webp/OMR6_kmW.webp')}"
   >
     <!-- Decoration bottom-right -->
     <div
       class="bg-contain h-[68px] w-[95px] absolute z-[0] bottom-[-30px] right-[0px]"
-      :style="`background-image: url(${config.public.assetsURL}/static/webp/DnbsAF0P.webp);`"
+
+      :style="{backgroundImage: bg('/static/webp/DnbsAF0P.webp')}"
     ></div>
 
     <!-- Header content -->
@@ -17,7 +18,8 @@
           aria-label="Back"
         >
           <img
-            :src="`${config.public.assetsURL}/static/svg/Cz-n34NG.svg`"
+        
+            :src="asset('/static/svg/Cz-n34NG.svg')" 
             alt="Back"
           />
         </button>
@@ -25,7 +27,8 @@
 
       <div class="flex-1 flex items-center justify-center gap-2">
         <img
-          :src="`${config.public.assetsURL}/static/svg/DrVQ8Lpq.svg`"
+          :src="asset('/static/svg/DrVQ8Lpq.svg')" 
+  
           alt="Customer Service Icon"
           loading="eager"
           fetchpriority="high"
@@ -41,11 +44,20 @@
     <!-- Bottom border -->
     <div
       class="bg-contain w-full h-[4px] absolute z-[0] bottom-[-2px] bg-center"
-      :style="`background-image: url(${config.public.assetsURL}/static/webp/B_MtXw-3.webp);`"
+          :style="{backgroundImage: bg('/static/webp/B_MtXw-3.webp')}"
+ 
     ></div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+
 const { t } = useI18n()
+const config = useRuntimeConfig()
+
+const asset = (path: string) =>
+  `${config.public.assetsURL}${path}`
+
+const bg = (path: string) =>
+  `url(${config.public.assetsURL}${path})`
 </script>
