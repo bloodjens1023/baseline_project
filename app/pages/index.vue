@@ -1,33 +1,57 @@
 <template>
-  <div class="mt-16 scroll-smooth">
-    <div>
-    <img class="w-full h-full object-cover p-3"
-      src="https://downpg117.uqianbao.com/source/public/static/webp/DKG9OB7h.webp" alt="">
-  </div>
-  
-  <div class="w-full px-[10px] mt-[10px]">
-    <div class="w-full aspect-[6.73/1] flex flex-row justify-center items-center gap-[10px] ">
-      <Rewards bg-image="https://downpg117.uqianbao.com/source/public/static/webp/sdfBvLKb.webp"/>
-      <Rewards bg-image="https://downpg117.uqianbao.com/source/public/static/webp/DMpFmNoL.webp"/>
-    </div>
-  </div>
-  <div class="py-[10px] w-full
-     aspect-[5.34/1] sticky top-[var(--mobile-header-height)] z-[40] my-[10px] flex items-center justify-center gap-[5px]">
-      <RoundedButton title="Resgatar" bg-image="https://downpg117.uqianbao.com/source/public/static/webp/C7_SoLrK.webp"/> 
-      <RoundedButton title="Semana" bg-image="https://downpg117.uqianbao.com/source/public/static/webp/3TY0Tzzx.webp"/>
-      <RoundedButton title="Misterioso" bg-image="https://downpg117.uqianbao.com/source/public/static/webp/D9Vf61xP.webp"/>
-      <RoundedButton title="Check-in" bg-image="https://downpg117.uqianbao.com/source/public/static/webp/BzOmGKPn.webp"/>
-      <RoundedButton title="Roleta" bg-image="https://downpg117.uqianbao.com/source/public/static/webp/CHoWiKXg.webp"/>
-  </div>
+  <div class="w-full scroll-smooth mt-16">
 
-  <AnimationsNum />
-  <NavigationButtons />
-  <BottomSection />
+    <!-- Banner -->
+    <img
+      class="w-full object-cover p-3"
+      :src="`${$config.public.imageAssetsURL}/static/webp/DKG9OB7h.webp`"
+      alt=""
+    />
+
+    <!-- Rewards Section -->
+    <div class="px-3 mt-3">
+      <div class="flex justify-center items-center gap-3">
+        <Rewards bg-image="/static/webp/sdfBvLKb.webp" />
+        <Rewards bg-image="/static/webp/DMpFmNoL.webp" />
+      </div>
+    </div>
+
+    <!-- Wrapper Sticky + GameSection -->
+    <div class="relative">
+
+      <!-- Sticky Buttons -->
+      <div class="sticky top-12 z-[88] bg-[#061237] py-3 flex items-center justify-center gap-2 px-2">
+        <RoundedButton
+          v-for="(btn, index) in buttons"
+          :key="index"
+          :title="btn.title"
+          :bg-image="`${config.public.assetsURL}/${btn.image}`"
+        />
+      </div>
+
+      <!-- Game Section -->
+      <GameSection />
+
+    </div>
+
+    <!-- Bottom -->
+    <BottomSection />
+
   </div>
-  
 </template>
+
 <script setup>
   import BottomSection from '../components/Home/BottomSection.vue';
   import AnimationsNum from '../components/Home/AnimationsNum.vue';
-  import NavigationButtons from '../components/Home/NavigationButtons.vue';
+  import GameSection from '~/components/Home/GameSection.vue';
+  const config = useRuntimeConfig()
+
+// Tableau des boutons avec titre et chemin relatif de l'image
+const buttons = [
+  { title: 'Resgatar', image: '/static/webp/C7_SoLrK.webp' },
+  { title: 'Semana', image: '/static/webp/3TY0Tzzx.webp' },
+  { title: 'Misterioso', image: '/static/webp/D9Vf61xP.webp' },
+  { title: 'Check-in', image: '/static/webp/BzOmGKPn.webp' },
+  { title: 'Roleta', image: '/static/webp/CHoWiKXg.webp' },
+]
 </script>

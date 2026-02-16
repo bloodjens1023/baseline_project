@@ -185,21 +185,21 @@
     <!-- Les 9 Icons  -->
     <div class="px-8 pt-8 mt-8">
       <div class="flex justify-center items-center gap-2 mb-2">
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/GZ2uwZ4U.svg"
             alt=""
             class="w-full rounded-lg"
           />
         </div>
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/Civ14LDW.svg"
             alt=""
             class="w-full rounded-lg"
           />
         </div>
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/B6TXnIDj.svg"
             alt=""
@@ -209,21 +209,21 @@
       </div>
 
       <div class="flex justify-center items-center gap-2 mb-2">
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/rP1oFiSh.svg"
             alt=""
             class="w-full rounded-lg"
           />
         </div>
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/D_i-KO_s.svg"
             alt=""
             class="w-full rounded-lg"
           />
         </div>
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/CDma3emR.svg"
             alt=""
@@ -233,21 +233,21 @@
       </div>
 
       <div class="flex justify-center items-center gap-2 mb-2">
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/B5U0gd8x.svg"
             alt=""
             class="w-full rounded-lg"
           />
         </div>
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/BVy-OIx7.svg"
             alt=""
             class="w-full rounded-lg"
           />
         </div>
-        <div class="share-icon" style="width: 400px">
+        <div class="share-icon" >
           <img
             src="https://downpg117.uqianbao.com/source/public/static/svg/CllcxtMJ.svg"
             alt=""

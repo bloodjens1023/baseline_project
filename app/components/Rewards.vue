@@ -2,7 +2,7 @@
 <template>
   <div 
     class="flex flex-1 h-full bg-cover"
-    :style="{ backgroundImage: `url('${bgImage}')` }"
+    :style="{ backgroundImage: `url('${ $config.public.assetsURL + bgImage}')` }"
   >
   </div>
 </template>
