@@ -1,6 +1,7 @@
 <template>
   <div
-    class="max-w-[500px] mx-auto min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900"
+    class="max-w-[500px] mx-auto min-h-screen"
+    :style="{backgroundColor: 'var(--background)'}"
   >
     <HeaderService/>
     <div class="max-w-2xl mx-auto px-2 py-8">

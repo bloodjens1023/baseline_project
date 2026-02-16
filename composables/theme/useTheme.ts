@@ -1,45 +1,35 @@
-import { ref, computed, onMounted } from 'vue'
-import { themes, type Theme } from './themes.config'
+import { useRuntimeConfig, ref, onMounted } from '#imports'
 
-export const currentTheme = ref<Theme>(themes.default)
+interface Theme {
+  [key: string]: string
+}
 
-export function useTheme() {
-  const THEME_KEY = 'user-theme' // clé pour localStorage
+export const useTheme = () => {
+  const config = useRuntimeConfig()
+  const themes: Record<string, Theme> = config.public.themes
 
-  const setTheme = (themeId: string) => {
-    if (themes[themeId]) {
-      currentTheme.value = themes[themeId]
+  // 👇 récupère automatiquement le thème défini dans nuxt.config
+  const currentTheme = ref<string>(config.public.activeTheme || 'default')
 
-      if (process.client) {
-        // Appliquer les couleurs CSS
-        Object.entries(currentTheme.value.colors).forEach(([key, value]) => {
-          document.documentElement.style.setProperty(`--${key}`, value)
-        })
-
-        // Sauvegarder dans localStorage
-        localStorage.setItem(THEME_KEY, themeId)
-      }
-    } else {
-      console.warn(`Theme ${themeId} not found`)
+  const applyTheme = (themeName: string) => {
+    const theme = themes[themeName]
+    if (!theme) {
+      console.warn(`Theme "${themeName}" not found!`)
+      return
     }
-  }
 
-  // Initialiser le thème depuis localStorage côté client
-  const initTheme = () => {
-    if (process.client) {
-      const storedTheme = localStorage.getItem(THEME_KEY)
-      if (storedTheme && themes[storedTheme]) {
-        setTheme(storedTheme)
-      } else {
-        setTheme('default')
-      }
+    if (typeof window !== 'undefined') {
+      Object.entries(theme).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(`--${key}`, value)
+      })
     }
+
+    currentTheme.value = themeName
   }
 
-  return {
-    currentTheme: computed(() => currentTheme.value),
-    setTheme,
-    initTheme,
-    availableThemes: Object.keys(themes),
-  }
+  onMounted(() => {
+    applyTheme(currentTheme.value)
+  })
+
+  return { currentTheme, applyTheme }
 }

@@ -13,7 +13,30 @@ export default defineNuxtConfig({
       url: 'https://pg117.bet',
       name: 'PG117',
       protocolName: 'pg117',
-      theme: '#182877'
+      theme: '#182877',
+
+      activeTheme: 'default',
+
+      themes: {
+        default: {
+          primary: '#1E88E5',
+          secondary: '#43A047',
+          background: '#061237',
+          text: '#212121'
+        },
+        dark: {
+          primary: '#FF5722',
+          secondary: '#FFC107',
+          background: '#121212',
+          text: '#E0E0E0'
+        },
+        ocean: {
+          primary: '#0288D1',
+          secondary: '#26C6DA',
+          background: '#E1F5FE',
+          text: '#01579B'
+        }
+      }
     }
   },
 
